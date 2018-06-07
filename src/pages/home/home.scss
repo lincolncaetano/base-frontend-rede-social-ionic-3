@@ -1,0 +1,41 @@
+page-home {
+    .logo {
+        padding: 30px 0;
+        min-height: 200px;
+        text-align: center;
+    
+        img {
+          max-width: 250px;
+        }
+      }
+    
+      .list {
+        margin-bottom: 0;
+      }
+      .item{
+        padding: 0px;
+        background-color: transparent;
+        color: color($colors, light);
+      }
+    
+      .toolbar-title {
+        text-align: center;
+        padding: 0 12px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: rgb(255, 255, 255);
+      }
+    
+      .getstart {
+        background-color: #fff;
+      }
+    
+      .video {
+        background: initial;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center center;
+      }
+    
+    
+}

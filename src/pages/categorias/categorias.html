@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-toolbar color="color2">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="openBuscaUsuario()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  
+    <ion-title color="color1">{{ 'HELLO' | translate }}</ion-title>
+  
+    <ion-buttons end>
+      <button ion-button icon-only (click)="newPostagem()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  
+  </ion-toolbar>
+  
+  </ion-header>
+
+
+<ion-content class="getstart" no-bounce>
+  <button ion-fab color="fab" (click)="goUsuario()"><ion-icon name="md-person-add"></ion-icon></button>
+</ion-content>

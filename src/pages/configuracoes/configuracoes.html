@@ -1,0 +1,57 @@
+<ion-header>
+
+    <ion-navbar color="color2">
+      <ion-title>{{ 'CONFIGURACOES' | translate }}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="getstart">
+  
+    <!-- <ion-list>
+      <ion-list-header>
+        Convidar
+      </ion-list-header>
+      <button ion-item >Amigos do Facebook</button>
+    </ion-list> -->
+  
+    <ion-list>
+      <button ion-item (click)="openConvidarAmigo()">{{ 'CONVIDAR_AMIGO' | translate }}</button>
+    </ion-list>
+  
+    <ion-list>
+      <ion-list-header>
+        {{ 'CONTA' | translate }}
+      </ion-list-header>
+      <button ion-item (click)="openEditarPerfil()">{{ 'EDITAR PERFIL' | translate }}</button>
+      <button ion-item (click)="openAlterarSenha()">{{ 'ALTERAR SENHA' | translate }}</button>
+      <button ion-item (click)="openUsuariosBloqueados()">{{ 'USUARIOS BLOQUEADO' | translate }}</button>
+    </ion-list>
+  
+    <ion-list>
+      <ion-list-header>
+        {{ 'CONFIGURACOES' | translate }}
+      </ion-list-header>
+      <button ion-item (click)="openIdioma()">{{ 'IDIOMA' | translate }}</button>
+    </ion-list>
+  
+    <ion-list>
+      <ion-list-header>
+        {{ 'SUPORTE' | translate }}
+      </ion-list-header>
+      <button ion-item (click)="launch('http://ionicframework.com/docs/v2')" >{{ 'CENTRAL AJUDA' | translate }}</button>
+      <button ion-item>{{ 'RELATAR PROBLEMA' | translate }}</button>
+      <button ion-item (click)="launch('http://ionicframework.com/docs/v2')">{{ 'POLITICA' | translate }}</button>
+      <button ion-item (click)="launch('http://ionicframework.com/docs/v2')">{{ 'TERMOS' | translate }}</button>
+    </ion-list>
+  
+    <ion-list>
+      <ion-list-header>
+      </ion-list-header>
+      <button ion-item (click)="logout()">{{ 'SAIR' | translate }}</button>
+    </ion-list>
+  
+  
+  </ion-content>
+  

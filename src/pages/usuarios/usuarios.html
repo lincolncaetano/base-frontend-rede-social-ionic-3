@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="color2">
+  </ion-navbar>
+
+  <ion-toolbar color="color2">
+    <ion-searchbar
+      [(ngModel)]="searchQuery"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="getstart">
+
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="goUsuario(item.id)">
+      <ion-avatar item-left>
+        <img src="{{ item.imageUrl }}">
+      </ion-avatar>
+      <h2>{{ item.nome }}</h2>
+      <p>@{{ item.username }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

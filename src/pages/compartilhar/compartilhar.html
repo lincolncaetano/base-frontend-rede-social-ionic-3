@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="color2">
+      <ion-title>{{ 'POSTAGEM' | translate }}</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="onNovaPostagem()">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="getstart">
+  <ion-toolbar color="color2">
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item *ngFor="let usuario of items" >
+      <ion-avatar item-start (click)="openPerfil(usuario)">
+        <img src="{{ usuario.imageUrl }}">
+      </ion-avatar>
+      <div item-content>
+        <h2>@{{ usuario.username }}</h2>
+        <p>{{ usuario.nome }}</p>
+      </div>
+      <ion-checkbox item-end color="color2"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>

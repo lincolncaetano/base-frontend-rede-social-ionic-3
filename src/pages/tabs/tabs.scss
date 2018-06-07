@@ -1,0 +1,16 @@
+page-tabs {
+    .tabs-wp[tabsPlacement=bottom] .tab-button[aria-selected=true] {
+        border-top-color: #c1452e;
+      }
+    
+      .badge-ios {
+          border-radius: 10px;
+          color: #ac7268;
+          background-color: #f4f4f4;
+      }
+    
+      .badge-md {
+          color: #ac7268;
+          background-color: #f4f4f4;
+      }
+}

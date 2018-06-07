@@ -1,0 +1,85 @@
+{
+  "HELLO": "holaaaaaa",
+  "NOTIFICACOES": "Notificaciones",
+  "PUBLICACOES": "Publicaciones",
+  "SEGUIDORES": "Seguidores",
+  "SEGUINDO": "Siguiente",
+
+  "CONFIGURACOES" : "Ajustes",
+  "CONTA" : "Cuenta",
+  "EDITAR PERFIL" : "Editar Perfil",
+  "ALTERAR SENHA" : "Cambiar Contraseña",
+  "USUARIOS BLOQUEADO" : "Usuarios Bloqueados",
+  "IDIOMA" : "Idioma",
+  "SUPORTE" : "Titular",
+  "CENTRAL AJUDA" : "Centro de Ayuda",
+  "RELATAR PROBLEMA" : "Reportar un Problema",
+  "POLITICA" : "Política de Privacidad",
+  "TERMOS" : "Condiciones",
+  "SAIR" : "Cierre de Sesión",
+
+  "PERFIL" : "Perfil",
+  "NOME" : "Nombre",
+  "NOME USUARIO" : "Nombre de usuario",
+  "SOBRE VOCE" : "Acerca de ti",
+  "DATA NASCIMENTO" : "Fecha de nacimiento",
+  "OUTRAS INFORMACOES" : "Otras informaciones",
+  "EMAIL" : "Email",
+  "TELEFONE" : "Teléfono",
+  "SEXO" : "Sexo",
+  "MASCULINO" : "Masculino",
+  "FEMININO" : "Femenino",
+
+  "SENHA ANTIGA" : "Contraseña Antigua",
+  "NOVA SENHA" : "Nueva Contraseña",
+  "CONFIRMA SENHA" : "Confirmar Seña",
+  "SENHA" : "Seña",
+
+  "TIRA FOTO" : "Tomar la foto",
+  "USAR BIBLIOTECA" : "Uso de la biblioteca",
+  "CANCELAR" : "Cancelar",
+  "POSTAGEM" : "Publicación",
+  "PRIVADO" : "Privado",
+  "NOS PERGUNTE" : "Nos pergunte",
+
+  "INSCREVER" : "Contratar",
+  "PROXIMO" : "Próximo",
+  "MSG_HOME" : "¿Qué tal que nos indique su opinión?",
+  "BEM_VINDO" : "Bienvenido",
+
+  "LOGIN" : "Login",
+  "MSG_ESQUECEU_SENHA" : "Olvidaste tu contraseña? Haga clic aquí y vamos a ayudarle.",
+  "ENVIAR" : "Enviar",
+  "RECUPERAR_SENHA" : "Recuperar contraseña",
+
+  "EMAIL_N_CADAST" : "No registrada de correo electrónico",
+  "DENUNCIAR" : "Denunciar",
+  "COMENTARIOS" : "Comentarios",
+  "EXCLUIR" : "Exclude",
+
+  "CONFIRMAR" : "Confirmar",
+  "SIM" : "Sí",
+  "NAO" : "No",
+  "OBRIGADO" : "Gracias!",
+
+  "DENUNCIA_AUTOMUTILACAO" : "La automutilación",
+  "DENUNCIA_DROGAS" : "La venta o el consumo de drogas alentadores",
+  "DENUNCIA_ASSEDIO" : "Acoso o intimidación",
+  "DENUNCIA_ARMA" : "Ventas o promociones de armas de fuego",
+  "DENUNCIA_NUDEZ" : "Desnudos o pornografía",
+  "DENUNCIA_ODIO" : "Símbolos o expresiones de odio",
+  "DENUNCIA_PROPRIEDADE" : "Infracción de propiedad intelectual",
+  "MSG_DENUNCIA_MOTIVO" : "Seleccione el motivo de la queja",
+  "MSG_DENUNICA_CONFIR" : "¿De verdad quiere confirmar esta queja?",
+  "MSG_DENUNICA_OBRIGADO" : "Gracias por ayudarnos a mejorar el funcionamiento.",
+
+  "MSG_EXCLUIR_CONFIR" : "¿Desea borrar este mensaje?",
+
+  "BLOQUEAR" : "Bloque",
+  "DESBLOQUEAR" : "Descubrir",
+
+  "CONVIDAR_AMIGO"  : "Invitar a amigos",
+  "CONVIDAR" : "Invitar",
+
+  "MSG_ERROR_CONECCAO" : "Sin conexión a Internet."
+}

@@ -1,0 +1,24 @@
+page-categorias {
+    .toolbar {
+        .toolbar-background {
+          background: transparent;
+          border: 0px;
+        }
+      }
+  
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+      background-image: url();
+    }
+  
+    .getstart {
+      // background-image: url('http://trendom.co/wp-content/uploads/2015/08/emma-watson-elle-magazine-cover-belgium-january-2015_3.jpg');
+      // background-image: url('https://thumbs.dreamstime.com/x/mulher-bonita-na-roupa-branca-que-levanta-no-fundo-cor-de-rosa-44292616.jpg');
+      background-repeat: no-repeat;
+      background-size:cover;
+      background-position:center center;
+    }
+  
+    ion-col {
+      padding: 0px;
+    }
+}

@@ -1,0 +1,90 @@
+{
+  "HELLO": "Hello",
+  "NOTIFICACOES": "Notifications",
+  "PUBLICACOES": "Publications",
+  "SEGUIDORES": "Followers",
+  "SEGUINDO": "Following",
+
+  "CONFIGURACOES" : "Settings",
+  "CONTA" : "Account",
+  "EDITAR PERFIL" : "Edit Profile",
+  "ALTERAR SENHA" : "Change Password",
+  "USUARIOS BLOQUEADO" : "Blocked Users",
+  "IDIOMA" : "Language",
+  "SUPORTE" : "Support",
+  "CENTRAL AJUDA" : "Help Center",
+  "RELATAR PROBLEMA" : "Report a Problem",
+  "POLITICA" : "Privacy Policy",
+  "TERMOS" : "Terms",
+  "SAIR" : "Logout",
+
+  "PERFIL" : "Profile",
+  "NOME" : "Name",
+  "NOME USUARIO" : "Username",
+  "SOBRE VOCE" : "About you",
+  "DATA NASCIMENTO" : "Date of birth",
+  "OUTRAS INFORMACOES" : "Other information",
+  "EMAIL" : "Email",
+  "TELEFONE" : "Phone",
+  "SEXO" : "Gender",
+  "MASCULINO" : "Male",
+  "FEMININO" : "Female",
+
+  "SENHA ANTIGA" : "Old password",
+  "NOVA SENHA" : "New password",
+  "CONFIRMA SENHA" : "Confirm password",
+  "SENHA" : "Password",
+
+  "TIRA FOTO" : "Take a picture",
+  "USAR BIBLIOTECA" : "Library Use",
+  "CANCELAR" : "Cancel",
+  "POSTAGEM" : "Publication",
+  "PRIVADO" : "Private",
+  "NOS PERGUNTE" : "Ask us",
+
+  "INSCREVER" : "Sign up",
+  "PROXIMO" : "Next",
+
+  "MSG_HOME" : "How about telling us your opinion?",
+  "BEM_VINDO" : "Welcome",
+
+  "LOGIN" : "Login",
+
+  "MSG_ESQUECEU_SENHA" : "Forgot your password? Click here and let us help.",
+  "ENVIAR" : "Send",
+  "RECUPERAR_SENHA" : "Recover Password",
+
+  "EMAIL_N_CADAST" : "Email not registered",
+  "DENUNCIAR" : "Report",
+  "COMENTARIOS" : "Comments",
+  "EXCLUIR" : "Delete",
+
+  "CONFIRMAR" : "Confirm",
+  "SIM" : "Yes",
+  "NAO" : "No",
+  "OBRIGADO" : "Thank you!",
+
+  "DENUNCIA_AUTOMUTILACAO" : "Self-mutilation",
+  "DENUNCIA_DROGAS" : "Selling or encouraging the use of drugs",
+  "DENUNCIA_ASSEDIO" : "Harassment or bullying",
+  "DENUNCIA_ARMA" : "Sale or promotion of firearms",
+  "DENUNCIA_NUDEZ" : "Nudity or Pornography",
+  "DENUNCIA_ODIO" : "Symbols or hate speech",
+  "DENUNCIA_PROPRIEDADE" : "Intellectual Property infringement",
+  "MSG_DENUNCIA_MOTIVO" : "Select reason for complaint",
+  "MSG_DENUNICA_CONFIR" : "Do you really want to confirm this report?",
+  "MSG_DENUNICA_OBRIGADO" : "Thank you for helping us with better operation.",
+
+  "MSG_EXCLUIR_CONFIR" : "Do you really want to delete this post?",
+
+  "BLOQUEAR" : "Block",
+  "DESBLOQUEAR" : "Unlock",
+
+  "CONVIDAR_AMIGO"  : "Invite friend",
+  "CONVIDAR" : "Invite",
+
+  "MSG_ERROR_CONECCAO" : "No internet connection."
+
+
+
+}

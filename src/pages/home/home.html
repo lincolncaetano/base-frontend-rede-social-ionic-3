@@ -1,0 +1,26 @@
+<ion-content padding class="getstart">
+
+  <!-- <img src="assets/imgs/tela-inicial.png" alt="logo"> -->
+
+  <form>
+    <ion-list style="text-align: center; margin: -1px 0 -1px 0;">
+      <ion-item>
+        <ion-label floating color="light">{{ 'NOME USUARIO' | translate }}</ion-label>
+        <ion-input [(ngModel)]="creds.username" name="username" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating color="light">{{ 'SENHA' | translate }}</ion-label>
+        <ion-input [(ngModel)]="creds.password" name="password" type="password"></ion-input>
+      </ion-item>
+      <button ion-button color="light" class="btn-login" block outline (click)="login()">
+          {{ 'LOGIN' | translate }}
+      </button>
+    </ion-list>
+  </form>
+  
+
+  <p [navPush]="esqueciSenhaPage" style="color: white;">
+    {{ 'MSG_ESQUECEU_SENHA' | translate }}
+  </p>
+
+</ion-content>

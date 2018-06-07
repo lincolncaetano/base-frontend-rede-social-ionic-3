@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="color2">
+      <ion-buttons start>
+          <button ion-button icon-only (click)="goBack()">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-buttons>
+      <ion-title>{{ 'POSTAGEM' | translate }}</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="onNovaPostagem()">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="getstart">
+  <form [formGroup]="formGroup" (ngSubmit)="onNovaPostagem(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-label>{{ 'NOS PERGUNTE' | translate }}*</ion-label>
+      <ion-textarea formControlName="pergunta" type="text"></ion-textarea>
+    </ion-item>
+    <p class="danger" *ngIf="formGroup.controls.pergunta.dirty && formGroup.controls.pergunta.errors" margin-left>Valor inválido</p>
+
+    <ion-item>
+      <ion-label>{{ 'PRIVADO' | translate }}</ion-label>
+      <ion-toggle formControlName="privado" color="color2"></ion-toggle>
+    </ion-item>
+
+    <ion-grid style="padding: 0px; margin-top: 40px;">
+      <ion-row>
+        <ion-col style="padding: 1px;" (click)="getFoto()">
+          <!-- <img  class="imgPer" src={{base64Image1}}> -->
+          <img  class="imgPer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUeVui_FRYPnq_VLnkooyHAvdY-x_1TTvp5TSn6zB3m6L1psNyqA">
+        </ion-col>
+        <ion-col style="padding: 1px;" (click)="getFoto()">
+          <!-- <img  class="imgPer" src={{base64Image2}}> -->
+          <img  class="imgPer" src="https://www.ufrb.edu.br/dicasenem/wp-content/uploads/2010/06/numero-2.jpg">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
