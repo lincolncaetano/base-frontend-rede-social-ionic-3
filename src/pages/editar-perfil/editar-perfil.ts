@@ -26,8 +26,8 @@ export class EditarPerfilPage {
     this.formGroup = this.formBuilder.group({
       nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
       email: ['', [Validators.required, Validators.email]],
-      sexo : ['1', [Validators.required]],
-      nascimento : ['', [Validators.required]]
+      sexo : ['1'],
+      nascimento : ['']
     });
   }
 

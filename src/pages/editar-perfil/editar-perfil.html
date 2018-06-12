@@ -1,9 +1,3 @@
-<!--
-  Generated template for the EditarPerfilPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar color="color2">
@@ -46,6 +40,6 @@
     </ion-item>
     <p class="danger" *ngIf="formGroup.controls.nascimento.dirty && formGroup.controls.nascimento.errors" margin-left>Valor inválido</p>
     
-    <button ion-button block type="submit" style="bottom: 0px" [disabled]="formGroup.invalid">Criar conta</button>
+    <button ion-button block type="submit" style="bottom: 0px" [disabled]="formGroup.invalid">{{ 'CONFIRMAR' | translate }}</button>
   </form>
 </ion-content>
