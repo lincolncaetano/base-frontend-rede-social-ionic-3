@@ -18,7 +18,6 @@ export class ConfiguracoesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ConfiguracoesPage');
   }
 
   logout(){
@@ -32,6 +31,14 @@ export class ConfiguracoesPage {
 
   openEditarPerfil(){
     this.navCtrl.push('EditarPerfilPage');
+  }
+
+  openAlterarSenha(){
+    this.navCtrl.push('AlterarSenhaPage');
+  }
+
+  openIdioma(){
+    this.navCtrl.push('IdiomaPage');
   }
 
 }

@@ -4,6 +4,7 @@ import { UsuarioDTO } from "../../models/usuario.dto";
 import { Observable } from "rxjs/Rx";
 import { API_CONFIG } from "../../config/api.config";
 import { StorageService } from "../storage.service";
+import { SenhaDTO } from "../../models/senha.dto";
 
 @Injectable()
 export class UsuarioService{
@@ -46,6 +47,17 @@ export class UsuarioService{
     edit(obj : UsuarioDTO, id) {
         return this.http.put(
             `${API_CONFIG.baseUrl}/usuarios/${id}`, 
+            obj,
+            { 
+                observe: 'response', 
+                responseType: 'text'
+            }
+        ); 
+    }
+
+    editSenha(obj : SenhaDTO, id) {
+        return this.http.put(
+            `${API_CONFIG.baseUrl}/usuarios/editSenha/${id}`, 
             obj,
             { 
                 observe: 'response', 

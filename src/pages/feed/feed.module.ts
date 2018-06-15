@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CategoriasPage } from './categorias';
+import { FeedPage } from './feed';
 import { TranslateModule } from '@ngx-translate/core'
 
 @NgModule({
   declarations: [
-    CategoriasPage,
+    FeedPage,
   ],
   imports: [
-    IonicPageModule.forChild(CategoriasPage),TranslateModule
+    IonicPageModule.forChild(FeedPage),TranslateModule
   ],
 })
-export class CategoriasPageModule {}
+export class FeedPageModule {}

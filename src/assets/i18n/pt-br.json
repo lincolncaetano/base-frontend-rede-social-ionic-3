@@ -83,5 +83,11 @@
   "CONVIDAR_AMIGO"  : "Convidar Amigo(a)",
   "CONVIDAR" : "Convidar",
 
-  "MSG_ERROR_CONECCAO" : "Sem conexão com a internet."
+  "MSG_ERROR_CONECCAO" : "Sem conexão com a internet.",
+  
+  "MSG_FALHA" : "Falha",
+  "MSG_SUCESSO" : "Sucesso",
+  "MSG_ERROR_EDIT_SENHA" : "Senha antiga não confere.",
+  "MSG_SUCESSO_EDIT" : "Edição Efetuada com Sucesso.",
+  "MSG_EDIT_IDIOMA" : "Deseja realmente alterar o idioma?"
 }

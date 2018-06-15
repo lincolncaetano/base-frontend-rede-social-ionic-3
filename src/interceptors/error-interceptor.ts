@@ -1,16 +1,31 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgModule, Injector } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx'; // IMPORTANTE: IMPORT ATUALIZADO
 import { StorageService } from '../services/storage.service';
 import { AlertController } from 'ionic-angular';
 import { FieldMessage } from '../models/fieldmessage';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+
+@NgModule({
+    imports:[TranslateModule]
+})
+    
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
-    constructor( public storage: StorageService, public alertCtrl : AlertController){
+    
+    constructor( 
+        public storage: StorageService, 
+        public alertCtrl : AlertController,
+        private injector: Injector
+    ){
+        
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        
+        
         return next.handle(req)
         .catch((error, caught) => {
 
@@ -89,9 +104,16 @@ export class ErrorInterceptor implements HttpInterceptor {
     }
 
     handleDefault(errorObj){
+
+        let msg = this.retornaMsg(errorObj.message);
+        if(msg == null){
+            msg = errorObj.message
+        }
+
+
         let alert = this.alertCtrl.create({
-            title : 'Erro '+errorObj.status+': '+errorObj.error,
-            message : errorObj.message,
+            title : this.retornaMsg('MSG_FALHA'),
+            message : msg,
             enableBackdropDismiss : false,
             buttons: [
                 {
@@ -101,6 +123,20 @@ export class ErrorInterceptor implements HttpInterceptor {
         });
         alert.present();
     }
+
+    retornaMsg(msg){
+        
+        let translate = this.injector.get(TranslateService);
+        
+        let retorno;
+        translate.get(msg).subscribe(
+            value => {
+            retorno =  value;
+            }
+        )
+        return retorno;
+    }
+
 }
 
 export const ErrorInterceptorProvider = {

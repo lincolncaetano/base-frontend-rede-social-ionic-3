@@ -8,7 +8,6 @@ import { API_CONFIG } from '../../config/api.config';
 import { TranslateService } from '@ngx-translate/core';
 import { UsuarioBloqueadoService } from '../../services/domain/usuario-bloqueado.service';
 import { UsuarioBloqueadoDTO } from '../../models/usuarioBloqueado.dto';
-import { RefDTO } from '../../models/ref.dto';
 import { UsuarioSeguidoService } from '../../services/domain/usuario-seguido.service';
 import { UsuarioSeguidoDTO } from '../../models/usuarioSeguido.dto';
 //import { CameraOptions, Camera } from '@ionic-native/camera';

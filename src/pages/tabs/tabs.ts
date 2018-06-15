@@ -15,7 +15,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class TabsPage {
 
-  categoriasRoot = 'CategoriasPage'
+  feedRoot = 'FeedPage'
   profileRoot = 'ProfilePage'
 
 

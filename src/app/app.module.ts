@@ -18,6 +18,7 @@ import { UsuarioService } from '../services/domain/usuario.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptor';
 import { UsuarioBloqueadoService } from '../services/domain/usuario-bloqueado.service';
 import { UsuarioSeguidoService } from '../services/domain/usuario-seguido.service';
+import { TradutorService } from '../services/tradutor.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -54,7 +55,8 @@ export function createTranslateLoader(http: HttpClient) {
     StorageService,
     UsuarioService,
     UsuarioBloqueadoService,
-    UsuarioSeguidoService
+    UsuarioSeguidoService,
+    TradutorService
   ]
 })
 export class AppModule {}

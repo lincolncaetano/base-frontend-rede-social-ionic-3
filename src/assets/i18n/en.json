@@ -83,7 +83,13 @@
   "CONVIDAR_AMIGO"  : "Invite friend",
   "CONVIDAR" : "Invite",
 
-  "MSG_ERROR_CONECCAO" : "No internet connection."
+  "MSG_ERROR_CONECCAO" : "No internet connection.",
+
+  "MSG_FALHA" : "Failure",
+  "MSG_SUCESSO" : "Success",
+  "MSG_ERROR_EDIT_SENHA" : "Old password does not match.",
+  "MSG_SUCESSO_EDIT" : "Success Edition.",
+  "MSG_EDIT_IDIOMA" : "Do you really want to change the language?"
 
 
 

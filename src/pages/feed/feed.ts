@@ -3,10 +3,10 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 
 @IonicPage()
 @Component({
-  selector: 'page-categorias',
-  templateUrl: 'categorias.html',
+  selector: 'page-feed',
+  templateUrl: 'feed.html',
 })
-export class CategoriasPage {
+export class FeedPage {
 
   constructor(
     public navCtrl: NavController,

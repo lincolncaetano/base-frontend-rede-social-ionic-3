@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="color2">
+    <ion-title>{{ 'IDIOMA' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="getstart">
+  <form [formGroup]="formGroup" (ngSubmit)="showConfirm(); $event.preventDefault()">
+    <ion-list radio-group color="light" formControlName="idioma">
+      <ion-item>
+        <ion-label>Português(Brasil)</ion-label>
+        <ion-radio checked="true" value="pt-br"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>English</ion-label>
+        <ion-radio value="en"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Español</ion-label>
+        <ion-radio value="es"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <button ion-button block outline color="light" type="submit" style="bottom: 0px" [disabled]="formGroup.invalid">{{ 'CONFIRMAR' | translate }}</button>
+  </form>
+</ion-content>

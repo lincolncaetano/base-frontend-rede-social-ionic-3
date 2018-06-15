@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { StorageService } from '../services/storage.service';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class MyApp {
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
     private translateService: TranslateService,
+    public storage : StorageService,
     public auth : AuthService
   ) {
     this.initializeApp();
@@ -37,8 +39,10 @@ export class MyApp {
   initializeApp() {
     this.platform.ready().then(() => {
 
-      this.translateService.setDefaultLang('pt-br');
-      this.translateService.use('pt-br');
+      
+
+      this.translateService.setDefaultLang(this.storage.getLocaIdioma().toString());
+      this.translateService.use(this.storage.getLocaIdioma().toString());
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();

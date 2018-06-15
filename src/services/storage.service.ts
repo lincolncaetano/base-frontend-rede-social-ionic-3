@@ -21,4 +21,16 @@ export class StorageService{
             localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(obj));
         }
     }
+
+    setIdioma(idioma : String){
+        localStorage.setItem(STORAGE_KEYS.localIdioma, JSON.stringify(idioma));
+    }
+    getLocaIdioma() : String{
+        let idioma = localStorage.getItem(STORAGE_KEYS.localIdioma);
+        if(idioma == null){
+            return JSON.parse('en')
+        }else{
+            return JSON.parse(idioma);
+        }
+    }
 }

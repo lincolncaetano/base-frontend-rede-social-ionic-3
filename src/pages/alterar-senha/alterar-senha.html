@@ -1,12 +1,37 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>alterarSenha</ion-title>
+  <ion-navbar color="color2">
+    <ion-title>{{ 'ALTERAR SENHA' | translate }}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="getstart">
+  <form [formGroup]="formGroup" (ngSubmit)="salvarSenha(); $event.preventDefault()">
 
+    <ion-list>
+    <ion-item>
+      <ion-label stacked>{{ 'SENHA ANTIGA' | translate }}*</ion-label>
+      <ion-input formControlName="senhaAntiga" type="password"></ion-input>
+    </ion-item>
+    <p class="danger" *ngIf="formGroup.controls.senhaAntiga.dirty && formGroup.controls.senhaAntiga.errors" margin-left>Valor inválido</p>
+  </ion-list>
+    <ion-list>
+      <ion-list-header>
+        {{ 'NOVA SENHA' | translate }}
+      </ion-list-header>
+      <ion-item>
+        <ion-label stacked>{{ 'NOVA SENHA' | translate }}*</ion-label>
+        <ion-input formControlName="senha" type="password"></ion-input>
+      </ion-item>
+      <p class="danger" *ngIf="formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Valor inválido</p>
+      <ion-item>
+        <ion-label stacked>{{ 'CONFIRMA SENHA' | translate }}*</ion-label>
+        <ion-input formControlName="confirmacao" type="password"></ion-input>
+      </ion-item>
+      <p class="danger" *ngIf="formGroup.controls.confirmacao.dirty && formGroup.controls.confirmacao.errors" margin-left>Valor inválido</p>
+      
+    </ion-list>
+
+    <button ion-button block outline color="light" type="submit" style="bottom: 0px" [disabled]="formGroup.invalid">{{ 'CONFIRMAR' | translate }}</button>
+  </form>
 </ion-content>

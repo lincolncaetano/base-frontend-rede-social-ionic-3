@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from '../../services/domain/usuario.service';
 import { UsuarioDTO } from '../../models/usuario.dto';
 import { StorageService } from '../../services/storage.service';
+import { TranslateService } from '@ngx-translate/core';
+import { TradutorService } from '../../services/tradutor.service';
 
 @IonicPage()
 @Component({
@@ -21,12 +23,13 @@ export class EditarPerfilPage {
     public formBuilder: FormBuilder,
     public storage: StorageService,
     public usuarioService: UsuarioService,
-    public alertCtr : AlertController
+    public alertCtr : AlertController,
+    private tradutor: TradutorService,
   ) {  
     this.formGroup = this.formBuilder.group({
       nome: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
       email: ['', [Validators.required, Validators.email]],
-      sexo : ['1'],
+      sexo : [''],
       nascimento : ['']
     });
   }
@@ -45,7 +48,7 @@ export class EditarPerfilPage {
           this.formGroup.setValue({
             nome : response.nome,
             email : response.email,
-            sexo: response.sexo,
+            sexo: (response.sexo != null) ? response.sexo : '1',
             nascimento: response.nascimento
           });
         },
@@ -69,8 +72,8 @@ export class EditarPerfilPage {
 
   showInsertOk(){
     let alert = this.alertCtr.create({
-      title : "Sucesso",
-      message : "Edição Efetuada com Sucesso",
+      title : this.tradutor.retornaMsg("MSG_SUCESSO"),
+      message : this.tradutor.retornaMsg("MSG_SUCESSO_EDIT"),
       enableBackdropDismiss : false,
       buttons : [
         {
