@@ -4,7 +4,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsuarioService } from '../../services/domain/usuario.service';
 import { UsuarioDTO } from '../../models/usuario.dto';
 import { StorageService } from '../../services/storage.service';
-import { TranslateService } from '@ngx-translate/core';
 import { TradutorService } from '../../services/tradutor.service';
 
 @IonicPage()

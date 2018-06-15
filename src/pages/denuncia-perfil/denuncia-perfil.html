@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color="color2">
+        <ion-title>{{ 'DENUNCIAR' | translate }}</ion-title>
+        <ion-buttons start>
+          <button ion-button icon-only (click)="goBack()">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="getstart">
+
+    <ion-list>
+      <ion-list-header>
+        {{ 'MSG_DENUNCIA_MOTIVO' | translate }}
+      </ion-list-header>
+  
+      <button ion-item (click)="showConfirm(1)">{{ 'DENUNCIA_AUTOMUTILACAO' | translate }}</button>
+      <button ion-item (click)="showConfirm(2)">{{ 'DENUNCIA_DROGAS' | translate }}</button>
+      <button ion-item (click)="showConfirm(3)">{{ 'DENUNCIA_ASSEDIO' | translate }}</button>
+      <button ion-item (click)="showConfirm(4)">{{ 'DENUNCIA_ARMA' | translate }}</button>
+      <button ion-item (click)="showConfirm(5)">{{ 'DENUNCIA_NUDEZ' | translate }}</button>
+      <button ion-item (click)="showConfirm(6)">{{ 'DENUNCIA_ODIO' | translate }}</button>
+      <button ion-item (click)="showConfirm(7)">{{ 'DENUNCIA_PROPRIEDADE' | translate }}</button>
+  
+    </ion-list>

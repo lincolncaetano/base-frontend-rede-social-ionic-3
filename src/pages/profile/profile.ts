@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, ModalController } from 'ionic-angular';
 import { StorageService } from '../../services/storage.service';
 import { UsuarioDTO } from '../../models/usuario.dto';
 import { UsuarioService } from '../../services/domain/usuario.service';
@@ -36,6 +36,7 @@ export class ProfilePage {
     public usuarioBloqService : UsuarioBloqueadoService,
     public usuarioSeguidoService : UsuarioSeguidoService, 
     public actionSheetCtrl: ActionSheetController,
+    public modalCtrl: ModalController,
     public translate: TranslateService) {
   }
 
@@ -144,9 +145,9 @@ export class ProfilePage {
             text: denunciar,
             role: 'destructive',
             handler: () => {
-              //let usuario = {id : this.usuario.id};
-              //let postagemModal = this.modalCtrl.create(DenunciaPostagemPage, {usuario: usuario});
-              //postagemModal.present();
+              let usuario = {id : this.usuario.id};
+              let postagemModal = this.modalCtrl.create('DenunciaPerfilPage', {usuario: usuario});
+              postagemModal.present();
             }
           },{
             text: cancelar,
@@ -171,9 +172,8 @@ export class ProfilePage {
             text: denunciar,
             role: 'destructive',
             handler: () => {
-             // let usuario = {id : this.usuario.id};
-              //let postagemModal = this.modalCtrl.create(DenunciaPostagemPage, {usuario: usuario});
-             // postagemModal.present();
+              let postagemModal = this.modalCtrl.create('DenunciaPerfilPage', {usuarioDenunciado: this.usuario.id});
+              postagemModal.present();
             }
           },{
             text: cancelar,

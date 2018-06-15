@@ -1,5 +1,3 @@
-import { List } from "ionic-angular";
-
 export interface UsuarioDTO{
     id : string;
     nome: string;

@@ -36,7 +36,6 @@ export class PostagemPage {
 
   ionViewDidLoad() {
     let localUser = this.storage.getLocalUser();
-      let idUsuario;
       if (localUser && localUser.username) {
         this.usuarioService.findByUsernameUnique(localUser.username)
         .subscribe(response => {
