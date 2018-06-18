@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ToastController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PostagemDTO } from '../../models/postagem.dto';
 import { StorageService } from '../../services/storage.service';
 import { UsuarioService } from '../../services/domain/usuario.service';
 import { UsuarioDTO } from '../../models/usuario.dto';
+import { PostagemService } from '../../services/domain/postagem.service';
 
 
 @IonicPage()
@@ -23,7 +24,9 @@ export class PostagemPage {
     public formBuilder: FormBuilder,
     public storage: StorageService,
     public usuarioService: UsuarioService,
+    public service: PostagemService,
     public modalCtrl: ModalController,
+    public toastCtrl: ToastController,
     public navParams: NavParams) {
 
       this.formGroup = this.formBuilder.group({
@@ -56,9 +59,28 @@ export class PostagemPage {
   onNovaPostagem(){
     if(this.formGroup.value.privado == true){
       this.navCtrl.push('CompartilharPage', { postagem: this.formGroup.value });
+    }else{
+      this.post = this.formGroup.value;
+      this.post.usuario = this.usuarioLogado;
+      this.service.insert(this.post)
+        .subscribe(response => {
+          this.presentToast("Salvo com Sucesso");
+        },
+        error => {});
     }
-    this.post = this.formGroup.value;
-    console.log(this.post);
   }
 
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 1000,
+      position: 'middle'
+    });
+  
+    toast.onDidDismiss(() => {
+      this.navCtrl.pop();
+    });
+  
+    toast.present();
+  }
 }

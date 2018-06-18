@@ -40,9 +40,14 @@ export class MyApp {
     this.platform.ready().then(() => {
 
       
-
-      this.translateService.setDefaultLang(this.storage.getLocaIdioma().toString());
-      this.translateService.use(this.storage.getLocaIdioma().toString());
+      if(this.storage.getLocaIdioma() != null){
+        this.translateService.setDefaultLang(this.storage.getLocaIdioma().toString());
+        this.translateService.use(this.storage.getLocaIdioma().toString());
+      }else{
+        this.translateService.setDefaultLang("pt-br");
+        this.translateService.use("pt-br");
+      }
+      
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();

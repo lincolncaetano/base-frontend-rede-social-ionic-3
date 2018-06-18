@@ -28,7 +28,7 @@ export class StorageService{
     getLocaIdioma() : String{
         let idioma = localStorage.getItem(STORAGE_KEYS.localIdioma);
         if(idioma == null){
-            return JSON.parse('en')
+            return null;
         }else{
             return JSON.parse(idioma);
         }

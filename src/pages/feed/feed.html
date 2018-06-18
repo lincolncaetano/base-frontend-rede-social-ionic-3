@@ -22,4 +22,42 @@
 
 <ion-content class="getstart" no-bounce>
   <button ion-fab color="fab" (click)="goUsuario()"><ion-icon name="md-person-add"></ion-icon></button>
+
+  <ion-card *ngFor="let postagem of listaPostagem">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{postagem.usuario.imageUrl}}">
+      </ion-avatar>
+      <h2 style="color:black">{{postagem.usuario.username}}</h2>
+      <p>November 5, 1955</p>
+    </ion-item>
+  
+    <img src="https://observatoriodocinema.bol.uol.com.br/wp-content/uploads/2016/01/delorean.jpg">
+  
+    <ion-card-content>
+      <p>{{postagem.pergunta}}</p>
+    </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear (click)="curtir(postagem)" *ngIf="!isCurtida(postagem)">
+          <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+          <div>{{postagem.listaCurtidas?.length}} Likes</div>
+        </button>
+        <button ion-button icon-start clear (click)="descurtir(postagem)" *ngIf="isCurtida(postagem)">
+          <ion-icon name="ios-thumbs-up"></ion-icon>
+          <div>{{postagem.listaCurtidas?.length}} Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear>
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  
+  </ion-card>
+  
 </ion-content>

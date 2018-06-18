@@ -20,6 +20,9 @@ import { UsuarioBloqueadoService } from '../services/domain/usuario-bloqueado.se
 import { UsuarioSeguidoService } from '../services/domain/usuario-seguido.service';
 import { TradutorService } from '../services/tradutor.service';
 import { DenunciaService } from '../services/domain/denuncia.service';
+import { PostagemService } from '../services/domain/postagem.service';
+import { CurtidaService } from '../services/domain/curtida.service';
+import { ComentarioService } from '../services/domain/comentario.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -58,7 +61,10 @@ export function createTranslateLoader(http: HttpClient) {
     UsuarioBloqueadoService,
     UsuarioSeguidoService,
     TradutorService,
-    DenunciaService
+    DenunciaService,
+    PostagemService,
+    CurtidaService,
+    ComentarioService
   ]
 })
 export class AppModule {}
