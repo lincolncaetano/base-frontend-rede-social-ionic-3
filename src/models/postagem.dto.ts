@@ -9,4 +9,5 @@ export interface PostagemDTO {
     pergunta?: string;
     status?: string;
     listaCurtidas? : string[];
+    listaComentarios? : string[];
 }

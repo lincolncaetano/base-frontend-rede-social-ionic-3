@@ -41,14 +41,16 @@ $colors: (
   dark:       #222,
   color1:     #fddbd5,
   color2:     #d87c6b,
-  trofeu:     #698292,
+  trofeu:     #656464,
   transp:     transparent,
-  fab:        #ae7167
+  fab:        #ae7167,
+  teste: #e4d0cc
 );
-
+$background-color: #e4d0cc;
 $text-input-placeholder-color:	 #f4f4f4 !default;
 $refresher-icon-color:	 #f4f4f4 !default;
 $refresher-text-color:	 #f4f4f4 !default;
+$refresher-border-color: transparent;
 
 // App iOS Variables
 // --------------------------------------------------
@@ -56,6 +58,7 @@ $refresher-text-color:	 #f4f4f4 !default;
 
 $select-ios-placeholder-color: #f4f4f4 !default;
 $radio-ios-color-on:           #222;
+$card-ios-background-color:    #f5f2f25c;
 
 
 // App Material Design Variables
@@ -64,6 +67,7 @@ $radio-ios-color-on:           #222;
 
 $select-md-placeholder-color:  #f4f4f4 !default;
 $radio-md-color-on:            #222;
+$card-md-background-color:    #f5f2f25c;
 
 
 // App Windows Variables

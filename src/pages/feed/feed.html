@@ -20,16 +20,19 @@
   </ion-header>
 
 
-<ion-content class="getstart" no-bounce>
-  <button ion-fab color="fab" (click)="goUsuario()"><ion-icon name="md-person-add"></ion-icon></button>
+<ion-content>
 
-  <ion-card *ngFor="let postagem of listaPostagem">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-    <ion-item>
+  <ion-card *ngFor="let postagem of listaPostagem" no-padding>
+
+    <ion-item >
       <ion-avatar item-start>
         <img src="{{postagem.usuario.imageUrl}}">
       </ion-avatar>
-      <h2 style="color:black">{{postagem.usuario.username}}</h2>
+      <h2 color="light" >{{postagem.usuario.username}}</h2>
       <p>November 5, 1955</p>
     </ion-item>
   
@@ -41,19 +44,19 @@
   
     <ion-row>
       <ion-col>
-        <button ion-button icon-start clear (click)="curtir(postagem)" *ngIf="!isCurtida(postagem)">
+        <button ion-button icon-start clear color="trofeu" (click)="curtir(postagem)" *ngIf="!isCurtida(postagem)">
           <ion-icon name="ios-thumbs-up-outline"></ion-icon>
           <div>{{postagem.listaCurtidas?.length}} Likes</div>
         </button>
-        <button ion-button icon-start clear (click)="descurtir(postagem)" *ngIf="isCurtida(postagem)">
+        <button ion-button icon-start clear color="trofeu" (click)="descurtir(postagem)" *ngIf="isCurtida(postagem)">
           <ion-icon name="ios-thumbs-up"></ion-icon>
           <div>{{postagem.listaCurtidas?.length}} Likes</div>
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-start clear>
+        <button ion-button icon-start clear (click)="openComentarios(postagem)" color="trofeu">
           <ion-icon name="text"></ion-icon>
-          <div>4 Comments</div>
+          <div>{{postagem.listaComentarios?.length}} Comments</div>
         </button>
       </ion-col>
     </ion-row>

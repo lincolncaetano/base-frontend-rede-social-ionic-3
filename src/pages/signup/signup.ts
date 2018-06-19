@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { EstadoDTO } from '../../models/estado.dto';
-import { CidadeDTO } from '../../models/cidade.dto';
 import { UsuarioService } from '../../services/domain/usuario.service';
 
 @IonicPage()
@@ -13,8 +11,6 @@ import { UsuarioService } from '../../services/domain/usuario.service';
 export class SignupPage {
 
   formGroup: FormGroup;
-  estados: EstadoDTO[];
-  cidades: CidadeDTO[];
 
   constructor(
     public navCtrl: NavController, 

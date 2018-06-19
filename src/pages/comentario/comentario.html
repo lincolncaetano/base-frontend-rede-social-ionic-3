@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="color2">
+    <ion-buttons start>
+        <button ion-button icon-only (click)="goBack()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>{{ 'COMENTARIOS' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="getstart">
+  <ion-list>
+    <ion-item-sliding *ngFor="let comentario of listaComentarios">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{ comentario.usuario.imageUrl }}">
+        </ion-avatar>
+        <h2 (click)="openPerfil(comentario.usuario)">{{ comentario.usuario.nome }}</h2>
+        <p>{{comentario.texto}}</p>
+      </ion-item>
+      <ion-item-options side="right" *ngIf="isAdmin(comentario)">
+        <button ion-button color="danger" (click)="excluirComentario(comentario)" >
+          <ion-icon name="trash"></ion-icon>
+          {{ 'EXCLUIR' | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+  <form [formGroup]="formGroup" (ngSubmit)="pushComentario();">
+  <ion-toolbar>
+    <ion-item>
+      <ion-input clearOnEdit="true" formControlName="msg" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-buttons end>
+      <button ion-button icon-end color="color1" [disabled]="formGroup.invalid">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  </form>
+</ion-footer>

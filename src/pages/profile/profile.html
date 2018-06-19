@@ -12,8 +12,13 @@
    </ion-header>
    
    
-   <ion-content class="getstart" no-bounce [ngStyle]="currentStyles">
-   
+   <!--<ion-content class="getstart" no-bounce [ngStyle]="currentStyles">-->
+  <ion-content>
+      
+    <div class="logo">
+      <img src="{{usuario?.imageUrl}}" alt="Ionic logo">
+    </div>
+
    <div style="position: absolute; bottom: 0px; width: 100%;" padding>
    
      <ion-fab right *ngIf="!perfilAdmin">

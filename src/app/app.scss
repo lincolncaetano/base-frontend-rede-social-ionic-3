@@ -24,9 +24,17 @@
   .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
     background-image: url();
   }
+
+  ion-content.has-refresher > .scroll-content {
+    background-color: transparent;
+  }
   
-  .getstart {
-  
+  .ion-card{
+    background-color: #f5f2f21f;
+    //background-color: transparent;
+  }
+
+  asasion-content {
     &:before {
       content: '';
       position: absolute;
@@ -34,17 +42,25 @@
       right: 0;
       bottom: 0;
       left: 0;
-      // background-image: linear-gradient(to bottom,#002f4b,#dc4225);
-      background-image: linear-gradient(to bottom, #17567b, #791300);
-      opacity: .6;
-    }
+      //background-image: linear-gradient(to bottom,#002f4b,#dc4225);
+      //background-image: linear-gradient(to bottom, #17567b, #791300);
+      //background-image: linear-gradient(to bottom, #c7dee6, #ffe9e6);
+      background-image: linear-gradient(to bottom, #791300, #791300);
+      opacity: .2;
+  }
+
+  ion-content {
+    background-color: #e4d0cc;
+  }
+
+    
   
     ion-page {
       background-color: white;
     }
 
     .item{
-      color: white;
+      color: #656464;
       background: transparent;
     }
   

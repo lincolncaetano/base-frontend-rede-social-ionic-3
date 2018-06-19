@@ -31,6 +31,15 @@ export class FeedPage {
   ) {
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
   ionViewDidLoad() {
     this.loadData();
   }
@@ -88,6 +97,12 @@ export class FeedPage {
 
   openBuscaUsuario(){
     this.navCtrl.push('UsuariosPage');
+  }
+  
+  openComentarios(postagem: PostagemDTO){
+    //this.navCtrl.push('ComentarioPage', {postagem : postagem});
+    let profileModal = this.modalCtrl.create('ComentarioPage', {postagem : postagem});
+    profileModal.present();
   }
 
   curtir(postagem){
