@@ -10,7 +10,6 @@ import { UsuarioBloqueadoService } from '../../services/domain/usuario-bloqueado
 import { UsuarioBloqueadoDTO } from '../../models/usuarioBloqueado.dto';
 import { UsuarioSeguidoService } from '../../services/domain/usuario-seguido.service';
 import { UsuarioSeguidoDTO } from '../../models/usuarioSeguido.dto';
-import { Camera, CameraOptions } from '@ionic-native/camera';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @IonicPage()
@@ -41,7 +40,6 @@ export class ProfilePage {
     public actionSheetCtrl: ActionSheetController,
     public modalCtrl: ModalController,
     public translate: TranslateService,
-    public camera : Camera,
     public sanitizer : DomSanitizer
   ) {
     this.profileImage = 'assets/imgs/profile.png';
@@ -269,56 +267,6 @@ export class ProfilePage {
     this.navCtrl.push('UsuariosSeguidosPage', {idUsuario: item.id, opcao: opcao});
   }
 
-  getCameraPicture(){
-    this.cameraOn = true;
 
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.PNG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    
-    this.camera.getPicture(options).then((imageData) => {
-     this.picture = 'data:image/png;base64,' + imageData;
-     this.cameraOn = false;
-    }, (err) => {
-     // Handle error
-    });
-  }
-
-  getGalleryPicture() {
-
-    this.cameraOn = true;
-
-    const options: CameraOptions = {
-      quality: 100,
-      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.PNG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    
-    this.camera.getPicture(options).then((imageData) => {
-     this.picture = 'data:image/png;base64,' + imageData;
-     this.cameraOn = false;
-    }, (err) => {
-      this.cameraOn = false;
-    });
-  }
-
-  sendPicture() {
-    this.usuarioService.uploadPicture(this.picture)
-      .subscribe(response => {
-        this.picture = null;
-        this.getImageIfExists();
-      },
-      error => {
-      });
-  }
-
-  cancel() {
-    this.picture = null;
-  }
 
 }

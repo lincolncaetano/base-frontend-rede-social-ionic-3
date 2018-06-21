@@ -9,6 +9,7 @@ import { CurtidaDTO } from '../../models/curtida.dto';
 import { CurtidaService } from '../../services/domain/curtida.service';
 import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { API_CONFIG } from '../../config/api.config';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @IonicPage()
 @Component({
@@ -27,7 +28,8 @@ export class FeedPage {
     public storage: StorageService,
     public usuarioService: UsuarioService,
     public curtidaService: CurtidaService,
-    public service: PostagemService
+    public service: PostagemService,
+    public sanitizer : DomSanitizer
   ) {
   }
 
@@ -40,7 +42,7 @@ export class FeedPage {
     }, 2000);
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     this.loadData();
   }
 
@@ -77,12 +79,34 @@ export class FeedPage {
   loadImageUrls() {
     for (var i=0; i<this.listaPostagem.length; i++) {
       let item = this.listaPostagem[i].usuario;
-      this.usuarioService.getImageFromBucket(item.id)
-        .subscribe(response => {
-          item.imageUrl = `${API_CONFIG.bucketBaseUrlProfile}/cp${item.id}.jpg`;
-        },
-        error => {});
+      this.getImageIfExists(item);
     }
+  }
+  getImageIfExists(item) {
+    this.usuarioService.getImageFromBucket(item.id)
+    .subscribe(response => {
+      //let imageUrl = `${API_CONFIG.bucketBaseUrlProfile}/cp${item.id}.jpg`;
+      this.blobToDataURL(response).then(dataUrl =>{
+        let img : string = dataUrl as string;
+        item.imageUrl = this.sanitizer.bypassSecurityTrustUrl(img);
+      });
+      //this.currentStyles = {     
+        //'background-image': 'url('+this.usuario.imageUrl+')'
+      //};
+    },
+    error => {
+      item.imageUrl = 'assets/imgs/profile.png';
+    });
+  }
+
+  // https://gist.github.com/frumbert/3bf7a68ffa2ba59061bdcfc016add9ee
+  blobToDataURL(blob) {
+    return new Promise((fulfill, reject) => {
+        let reader = new FileReader();
+        reader.onerror = reject;
+        reader.onload = (e) => fulfill(reader.result);
+        reader.readAsDataURL(blob);
+    })
   }
 
   goUsuario(){
