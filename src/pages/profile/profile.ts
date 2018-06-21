@@ -10,6 +10,7 @@ import { UsuarioBloqueadoService } from '../../services/domain/usuario-bloqueado
 import { UsuarioBloqueadoDTO } from '../../models/usuarioBloqueado.dto';
 import { UsuarioSeguidoService } from '../../services/domain/usuario-seguido.service';
 import { UsuarioSeguidoDTO } from '../../models/usuarioSeguido.dto';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 //import { CameraOptions, Camera } from '@ionic-native/camera';
 
 @IonicPage()
@@ -27,6 +28,7 @@ export class ProfilePage {
   perfilAdmin = false;
   currentStyles = {};
   isBloqueado = false;
+  picture : string;
 
   constructor(
     public navCtrl: NavController, 
@@ -37,12 +39,15 @@ export class ProfilePage {
     public usuarioSeguidoService : UsuarioSeguidoService, 
     public actionSheetCtrl: ActionSheetController,
     public modalCtrl: ModalController,
-    public translate: TranslateService) {
+    public translate: TranslateService,
+    public camera : Camera
+  ) {
   }
 
   ionViewDidEnter() {
     this.loadData();
   }
+
   loadUsuarioParam(usuario_id){
     this.usuarioService.findById(usuario_id)
     .subscribe(response => {
@@ -243,6 +248,58 @@ export class ProfilePage {
 
   openListaUsuario(item, opcao){
     this.navCtrl.push('UsuariosSeguidosPage', {idUsuario: item.id, opcao: opcao});
+  }
+
+  getCameraPicture(){
+    this.cameraOn = true;
+
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.PNG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     this.picture = 'data:image/png;base64,' + imageData;
+     this.cameraOn = false;
+    }, (err) => {
+     // Handle error
+    });
+  }
+
+  getGalleryPicture() {
+
+    this.cameraOn = true;
+
+    const options: CameraOptions = {
+      quality: 100,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.PNG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     this.picture = 'data:image/png;base64,' + imageData;
+     this.cameraOn = false;
+    }, (err) => {
+      this.cameraOn = false;
+    });
+  }
+
+  sendPicture() {
+    this.usuarioService.uploadPicture(this.picture)
+      .subscribe(response => {
+        this.picture = null;
+        this.loadData();
+      },
+      error => {
+      });
+  }
+
+  cancel() {
+    this.picture = null;
   }
 
 }

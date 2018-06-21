@@ -5,11 +5,16 @@ import { Observable } from "rxjs/Rx";
 import { API_CONFIG } from "../../config/api.config";
 import { StorageService } from "../storage.service";
 import { SenhaDTO } from "../../models/senha.dto";
+import { ImageUtilService } from "../image-util.service";
 
 @Injectable()
 export class UsuarioService{
 
-    constructor(public http: HttpClient, public storage: StorageService) {
+    constructor(
+        public http: HttpClient, 
+        public storage: StorageService,
+        public imageUtilService: ImageUtilService
+    ) {
     }
 
     findByEmail(email: string) : Observable<UsuarioDTO> {
@@ -59,6 +64,20 @@ export class UsuarioService{
         return this.http.put(
             `${API_CONFIG.baseUrl}/usuarios/editSenha/${id}`, 
             obj,
+            { 
+                observe: 'response', 
+                responseType: 'text'
+            }
+        ); 
+    }
+
+    uploadPicture(picture) {
+        let pictureBlob = this.imageUtilService.dataUriToBlob(picture);
+        let formData : FormData = new FormData();
+        formData.set('file', pictureBlob, 'file.png');
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/usuarios/picture`, 
+            formData,
             { 
                 observe: 'response', 
                 responseType: 'text'

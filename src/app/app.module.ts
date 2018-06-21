@@ -22,6 +22,7 @@ import { DenunciaService } from '../services/domain/denuncia.service';
 import { PostagemService } from '../services/domain/postagem.service';
 import { CurtidaService } from '../services/domain/curtida.service';
 import { ComentarioService } from '../services/domain/comentario.service';
+import { ImageUtilService } from '../services/image-util.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -64,7 +65,8 @@ export function createTranslateLoader(http: HttpClient) {
     DenunciaService,
     PostagemService,
     CurtidaService,
-    ComentarioService
+    ComentarioService,
+    ImageUtilService
   ]
 })
 export class AppModule {}
