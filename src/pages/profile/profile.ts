@@ -99,7 +99,7 @@ export class ProfilePage {
   getImageIfExists() {
     this.usuarioService.getImageFromBucket(this.usuario.id)
     .subscribe(response => {
-      this.usuario.imageUrl = `${API_CONFIG.bucketBaseUrl}/cp${this.usuario.id}.jpg`;
+      this.usuario.imageUrl = `${API_CONFIG.bucketBaseUrlProfile}/cp${this.usuario.id}.jpg`;
       this.currentStyles = {     
         'background-image': 'url('+this.usuario.imageUrl+')'
       };

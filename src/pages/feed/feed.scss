@@ -1,4 +1,4 @@
-page-categorias {
+page-feed {
     .toolbar {
         .toolbar-background {
           background: transparent;
@@ -20,6 +20,16 @@ page-categorias {
   
     ion-col {
       padding: 0px;
+    }
+
+    .card-md {
+      margin: 10px 0px 10px 0px;
+      width: 100%;
+    }
+
+    .card-ios{
+      margin: 12px 0px 12px 0px;
+      width: 100%;
     }
 
 }

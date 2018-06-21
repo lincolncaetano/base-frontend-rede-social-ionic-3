@@ -79,7 +79,7 @@ export class FeedPage {
       let item = this.listaPostagem[i].usuario;
       this.usuarioService.getImageFromBucket(item.id)
         .subscribe(response => {
-          item.imageUrl = `${API_CONFIG.bucketBaseUrl}/cp${item.id}.jpg`;
+          item.imageUrl = `${API_CONFIG.bucketBaseUrlProfile}/cp${item.id}.jpg`;
         },
         error => {});
     }

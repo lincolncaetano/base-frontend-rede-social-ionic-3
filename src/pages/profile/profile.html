@@ -1,5 +1,5 @@
   <ion-header>
-      <ion-navbar color="color2">
+      <ion-navbar color="transp">
         <ion-buttons end>
           <button ion-button icon-only *ngIf="perfilAdmin" (click)="goConfiguracoes()">
             <ion-icon name="settings"></ion-icon>
@@ -12,12 +12,14 @@
    </ion-header>
    
    
-   <!--<ion-content class="getstart" no-bounce [ngStyle]="currentStyles">-->
+<!--  <ion-content class="getstart" no-bounce [ngStyle]="currentStyles"> -->  
+  
   <ion-content>
-      
-    <div class="logo">
+    <!-- <div class="logo getstart" [ngStyle]="currentStyles">
+    </div> -->
+   <div class="logo2">
       <img src="{{usuario?.imageUrl}}" alt="Ionic logo">
-    </div>
+    </div> 
 
    <div style="position: absolute; bottom: 0px; width: 100%;" padding>
    
@@ -26,19 +28,19 @@
        <button ion-fab color="fab" *ngIf="isSegue" (click)="excluirSeguir()"><ion-icon name="ios-eye"></ion-icon></button>
     </ion-fab>
    
-     <ion-grid style="color: white;">
+     <ion-grid style="color: #7d878e;">
        <ion-row>
-         <h2 style=" color: white; margin-bottom: 0px; font-weight: bold;">{{usuario?.nome}}</h2>
+         <h2 style=" color: #7d878e; margin-bottom: 0px; font-weight: bold;">{{usuario?.nome}}</h2>
        </ion-row>
        <ion-row>
          <ion-col>
-           <p style="color: white; margin: 0px 0px 10px 0px;">{{usuario?.email}}</p>
+           <p style="color: #7d878e; margin: 0px 0px 10px 0px;">{{usuario?.email}}</p>
          </ion-col>
        </ion-row>
      </ion-grid>
-     <ion-grid style="color: white; text-align: center; font-size: 1.5rem; padding: 0px;">
+     <ion-grid style="color: #7d878e; text-align: center; font-size: 1.5rem; padding: 0px;">
        <ion-row style="font-weight: bold;">
-         <ion-col width-33 (click)="openListaPostagem(usuario)">11</ion-col>
+         <ion-col width-33 (click)="openListaPostagem(usuario)">{{usuario?.qtdPostagem}}</ion-col>
          <ion-col width-33 (click)="openListaUsuario(usuario, 'seguidores')" >{{usuario?.qtdSeguidores}}</ion-col>
          <ion-col width-33 (click)="openListaUsuario(usuario, 'seguidos')">{{usuario?.qtdSeguidos}}</ion-col>
        </ion-row>
@@ -48,7 +50,7 @@
          <ion-col width-33 style="padding: 0px;" (click)="openListaUsuario(usuario, 'seguidos')">{{ 'SEGUINDO' | translate }}</ion-col>
        </ion-row>
      </ion-grid>
-     <p style="color: white; font-size: 1.4rem; min-height: 70px; ">
+     <p style="color: #7d878e; font-size: 1.4rem; min-height: 70px; ">
        {{usuario?.descricao}}
      </p>
    </div>

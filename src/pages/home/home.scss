@@ -12,10 +12,11 @@ page-home {
       .list {
         margin-bottom: 0;
       }
+
       .item{
         padding: 0px;
         background-color: transparent;
-        color: color($colors, light);
+        color: color($colors, teste, contrast);
       }
     
       .toolbar-title {
@@ -23,18 +24,18 @@ page-home {
         padding: 0 12px;
         font-size: 1.2rem;
         font-weight: 500;
-        color: rgb(255, 255, 255);
       }
-    
-      .getstart {
-        background-color: #fff;
-      }
+
     
       .video {
         background: initial;
         background-repeat: no-repeat;
         background-size:cover;
         background-position:center center;
+      }
+
+      .btn-login{
+        color: color($colors, teste, contrast);
       }
     
     

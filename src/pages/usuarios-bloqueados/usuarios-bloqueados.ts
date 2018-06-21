@@ -60,7 +60,7 @@ export class UsuariosBloqueadosPage {
       let item = this.listaUsuario[i];
       this.usuarioService.getImageFromBucket(item.id)
         .subscribe(response => {
-          item.imageUrl = `${API_CONFIG.bucketBaseUrl}/cp${item.id}.jpg`;
+          item.imageUrl = `${API_CONFIG.bucketBaseUrlProfile}/cp${item.id}.jpg`;
         },
         error => {});
     }

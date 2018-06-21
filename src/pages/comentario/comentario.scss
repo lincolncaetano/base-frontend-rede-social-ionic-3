@@ -1,11 +1,11 @@
 page-comentario {
     .item{
-      color: white;
+      color: color($colors, teste, contrast);;
       background: transparent;
     }
   
     .item p{
-      color: white;
+      color: color($colors, teste, contrast);;
     }
     .list-ios ion-item-sliding {
         background-color: transparent;
@@ -13,5 +13,9 @@ page-comentario {
 
     .list-md ion-item-sliding {
         background-color: transparent;
+    }
+
+    .texto{
+        color: color($colors, teste, contrast);
     }
 }

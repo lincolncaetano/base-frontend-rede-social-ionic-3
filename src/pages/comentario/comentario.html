@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="color2">
+  <ion-toolbar color="teste2">
     <ion-buttons start>
         <button ion-button icon-only (click)="goBack()">
           <ion-icon name="arrow-back"></ion-icon>
@@ -32,12 +32,12 @@
 
 <ion-footer no-border>
   <form [formGroup]="formGroup" (ngSubmit)="pushComentario();">
-  <ion-toolbar>
+  <ion-toolbar color="teste">
     <ion-item>
-      <ion-input clearOnEdit="true" formControlName="msg" type="text" placeholder=""></ion-input>
+      <ion-input class="texto"  formControlName="msg" type="text" placeholder=""></ion-input>
     </ion-item>
     <ion-buttons end>
-      <button ion-button icon-end color="color1" [disabled]="formGroup.invalid">
+      <button ion-button icon-end color="contrast" [disabled]="formGroup.invalid">
         <ion-icon name="send"></ion-icon>
       </button>
     </ion-buttons>
