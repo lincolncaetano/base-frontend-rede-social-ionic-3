@@ -11,7 +11,7 @@ import { UsuarioBloqueadoDTO } from '../../models/usuarioBloqueado.dto';
 import { UsuarioSeguidoService } from '../../services/domain/usuario-seguido.service';
 import { UsuarioSeguidoDTO } from '../../models/usuarioSeguido.dto';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-//import { CameraOptions, Camera } from '@ionic-native/camera';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @IonicPage()
 @Component({
@@ -29,6 +29,7 @@ export class ProfilePage {
   currentStyles = {};
   isBloqueado = false;
   picture : string;
+  profileImage;
 
   constructor(
     public navCtrl: NavController, 
@@ -40,8 +41,10 @@ export class ProfilePage {
     public actionSheetCtrl: ActionSheetController,
     public modalCtrl: ModalController,
     public translate: TranslateService,
-    public camera : Camera
+    public camera : Camera,
+    public sanitizer : DomSanitizer
   ) {
+    this.profileImage = 'assets/imgs/profile.png';
   }
 
   ionViewDidEnter() {
@@ -105,11 +108,27 @@ export class ProfilePage {
     this.usuarioService.getImageFromBucket(this.usuario.id)
     .subscribe(response => {
       this.usuario.imageUrl = `${API_CONFIG.bucketBaseUrlProfile}/cp${this.usuario.id}.jpg`;
+      this.blobToDataURL(response).then(dataUrl =>{
+        let img : string = dataUrl as string;
+        this.profileImage = this.sanitizer.bypassSecurityTrustUrl(img);
+      });
       this.currentStyles = {     
         'background-image': 'url('+this.usuario.imageUrl+')'
       };
     },
-    error => {});
+    error => {
+      this.profileImage = 'assets/imgs/profile.png';
+    });
+  }
+
+  // https://gist.github.com/frumbert/3bf7a68ffa2ba59061bdcfc016add9ee
+  blobToDataURL(blob) {
+    return new Promise((fulfill, reject) => {
+        let reader = new FileReader();
+        reader.onerror = reject;
+        reader.onload = (e) => fulfill(reader.result);
+        reader.readAsDataURL(blob);
+    })
   }
 
   isSegueTest(){
@@ -292,7 +311,7 @@ export class ProfilePage {
     this.usuarioService.uploadPicture(this.picture)
       .subscribe(response => {
         this.picture = null;
-        this.loadData();
+        this.getImageIfExists();
       },
       error => {
       });
