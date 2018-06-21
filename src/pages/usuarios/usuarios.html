@@ -17,7 +17,7 @@
   <ion-list>
     <ion-item *ngFor="let item of items" (click)="goUsuario(item.id)">
       <ion-avatar item-left>
-        <img src="{{ item.imageUrl }}">
+        <img [src]="item.imageUrl || 'assets/imgs/profile.png'">
       </ion-avatar>
       <h2>{{ item.nome }}</h2>
       <p>@{{ item.username }}</p>

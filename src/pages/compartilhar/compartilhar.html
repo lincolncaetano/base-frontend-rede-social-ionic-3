@@ -17,7 +17,7 @@
   <ion-list>
     <ion-item *ngFor="let usuario of items" >
       <ion-avatar item-start (click)="openPerfil(usuario)">
-        <img src="{{ usuario.imageUrl }}">
+        <img [src]="usuario.imageUrl || 'assets/imgs/profile.png'">
       </ion-avatar>
       <div item-content>
         <h2>@{{ usuario.username }}</h2>

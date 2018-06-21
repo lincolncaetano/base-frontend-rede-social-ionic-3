@@ -9,7 +9,7 @@
   <ion-list>
     <ion-item *ngFor="let usuario of listaUsuario" >
       <ion-avatar item-left (click)="openPerfil(usuario)">
-        <img src="{{ usuario.imageUrl }}">
+        <img [src]="usuario.imageUrl || 'assets/imgs/profile.png'">
       </ion-avatar>
       <button ion-button icon-only item-right color="transp" style="box-shadow: none;" *ngIf="isSegue(usuario, false)" (click)="excluirSeguir(usuario)">
         <ion-icon name="ios-eye"></ion-icon>
