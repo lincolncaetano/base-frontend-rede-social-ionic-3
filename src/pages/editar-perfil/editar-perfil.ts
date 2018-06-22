@@ -148,6 +148,7 @@ export class EditarPerfilPage {
     
     this.camera.getPicture(options).then((imageData) => {
      this.picture = 'data:image/png;base64,' + imageData;
+     this.profileImage = this.picture;
      this.cameraOn = false;
     }, (err) => {
      // Handle error
@@ -173,6 +174,7 @@ export class EditarPerfilPage {
     
     this.camera.getPicture(options).then((imageData) => {
      this.picture = 'data:image/png;base64,' + imageData;
+     this.profileImage = this.picture;
      this.cameraOn = false;
     }, (err) => {
       this.cameraOn = false;
