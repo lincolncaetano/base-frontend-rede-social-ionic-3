@@ -21,6 +21,7 @@ export class EditarPerfilPage {
   picture : string;
   profileImage;
   cameraOn: boolean = false;
+  editPicture : boolean = false;
 
   constructor(
     public navCtrl: NavController, 
@@ -74,6 +75,9 @@ export class EditarPerfilPage {
   editarUser(){
     this.usuarioService.edit(this.formGroup.value, this.usuario.id)
     .subscribe( res => {
+      if(this.editPicture){
+        this.sendPicture();
+      }
       this.showInsertOk();
     }, error =>{})
   }
@@ -95,7 +99,7 @@ export class EditarPerfilPage {
     alert.present();
   }
 
-  presentActionSheet(num) {
+  presentActionSheet() {
 
     let tirarFoto = this.tradutor.retornaMsg('TIRA FOTO');
     let tirarBiblioteca = this.tradutor.retornaMsg('USAR BIBLIOTECA');
@@ -128,12 +132,18 @@ export class EditarPerfilPage {
 
   getCameraPicture(){
     this.cameraOn = true;
+    this.editPicture = true;
 
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.PNG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      allowEdit: true,
+      correctOrientation: true,
+      saveToPhotoAlbum : false,
+      targetWidth: 300,
+      targetHeight: 300
     }
     
     this.camera.getPicture(options).then((imageData) => {
@@ -145,15 +155,20 @@ export class EditarPerfilPage {
   }
 
   getGalleryPicture() {
-
     this.cameraOn = true;
+    this.editPicture = true;
 
     const options: CameraOptions = {
       quality: 100,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.PNG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      allowEdit: true,
+      correctOrientation: true,
+      saveToPhotoAlbum : false,
+      targetWidth: 300,
+      targetHeight: 300
     }
     
     this.camera.getPicture(options).then((imageData) => {

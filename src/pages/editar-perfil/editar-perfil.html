@@ -1,7 +1,7 @@
 <ion-header>
 
-  <ion-navbar color="color2">
-    <ion-title>{{ 'ALTERAR SENHA' | translate }}</ion-title>
+  <ion-navbar color="teste2">
+    <ion-title>{{ 'PERFIL' | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,11 +9,11 @@
 
 <ion-content padding class="getstart">
 
-  <div class="logo2">
+  <div class="logo2" (click)="presentActionSheet()">
     <img [src]="profileImage" alt="Ionic logo">
   </div> 
 
-  <ion-card>
+  <!-- <ion-card>
       <ion-card-header>
         Enviar imagem de perfil
       </ion-card-header>
@@ -26,7 +26,7 @@
         <button *ngIf="picture" ion-button outline block (click)="sendPicture()">Enviar imagem</button>
         <button *ngIf="picture" ion-button outline block (click)="cancel()">Descartar imagem</button>
       </ion-item>
-   </ion-card>
+   </ion-card> -->
 
   <form [formGroup]="formGroup" (ngSubmit)="editarUser(); $event.preventDefault()">
     <ion-item>

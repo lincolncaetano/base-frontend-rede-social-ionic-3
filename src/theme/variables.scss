@@ -42,7 +42,10 @@ $colors: (
   color1:     #fddbd5,
   color2:     #d87c6b,
   trofeu:     #656464,
-  transp:     transparent,
+  transp: (
+    base: transparent,
+    contrast: #7d878e
+  ),
   fab:        #ae7167,
   teste: (
     base: #E4CDC9,
