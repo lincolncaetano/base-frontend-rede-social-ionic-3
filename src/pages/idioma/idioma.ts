@@ -25,7 +25,7 @@ export class IdiomaPage {
   ) {
 
     this.formGroup = this.formBuilder.group({
-      idioma: [this.storage.getLocaIdioma().toString()]
+      idioma: [ this.storage.getLocaIdioma() != null ? this.storage.getLocaIdioma().toString() : ""]
     });
   }
 
